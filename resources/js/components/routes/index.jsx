@@ -7,6 +7,7 @@ import {
 import Home from "../pages/Home/Home";
 import { useNavigate } from 'react-router-dom';
 import { ClientRouter } from '@shopify/app-bridge-react/components/ClientRouter';
+import SkeletonPage from "../pages/Skeleton/SkeletonPage";
 
 export default function RoutePath() {
 
@@ -17,10 +18,10 @@ export default function RoutePath() {
     );
     return (
         <>
-            {/* <ClientRouter history={history} /> */}
+            <ClientRouter history={history} />
             <Routes>
                 <Route exact path='/' element={<Home />} />
-                {/* <Route exact path='/admin/widget-styling' element={<WidgetStyling />} /> */}
+                <Route exact path='/skeleton-page' element={<SkeletonPage />} />
             </Routes>
         </>
     )

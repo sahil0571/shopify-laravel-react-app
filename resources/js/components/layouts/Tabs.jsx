@@ -12,10 +12,14 @@ function Tabs() {
         label: 'Home',
         destination: '/',
     });
+    const skeletonPage = AppLink.create(app, {
+        label: 'Skeleton Page',
+        destination: '/skeleton-page',
+    });
 
     // or create a NavigationMenu with the settings link active
     const navigationMenu = NavigationMenu.create(app, {
-        items: [home],
+        items: [home, skeletonPage],
     });
 
     return (

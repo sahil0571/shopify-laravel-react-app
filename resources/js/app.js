@@ -1,2 +1,2 @@
-console.log('asdasdaad');
+console.clear();
 import './App.jsx'

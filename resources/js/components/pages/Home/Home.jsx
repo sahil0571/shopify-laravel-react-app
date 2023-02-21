@@ -1,19 +1,13 @@
 import React from 'react'
-import { Page } from '@shopify/polaris';
-import NavigationLayout from '../../layouts/NavigationLayout';
+import { Page, Text } from '@shopify/polaris';
 
 function Home() {
     return (
-        <NavigationLayout>
-            <div className='pageWrapper home'>
-                <div className='pageHeading'>Laravel React App</div>
-                <Page
-                    compactTitle
-                >
-
-                </Page>
-            </div>
-        </NavigationLayout>
+        <Page
+            title='Home Page'
+        >
+            <Text> Hello {window.shopOrigin} </Text>
+        </Page>
     )
 }
 

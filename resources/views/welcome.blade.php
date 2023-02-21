@@ -9,8 +9,6 @@
 </head>
 
 <body>
-    <div id="app"></div>
-    @vite('resources/js/app.js')
     {{-- @vite('resources/js/app.css') --}}
     @if(\Osiset\ShopifyApp\Util::getShopifyConfig('appbridge_enabled') && \Osiset\ShopifyApp\Util::useNativeAppBridge())
         <script src="https://unpkg.com/@shopify/app-bridge{{ \Osiset\ShopifyApp\Util::getShopifyConfig('appbridge_version') ? '@'.config('shopify-app.appbridge_version') : '' }}"></script>
@@ -38,6 +36,9 @@
             </script>
         @include('partials.shopify-token-handler')
     @endif
+
+    <div id="app"></div>
+    @vite('resources/js/app.js')
 </body>
 
 </html>
