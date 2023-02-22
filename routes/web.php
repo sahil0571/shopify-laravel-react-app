@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', [AuthController::class, 'login']);
 
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 // Route::get('/',[AuthController::class , 'index'])->middleware('verify.shopify')->name('home');
 
 // Please keep this route last
@@ -24,3 +24,5 @@ Route::controller(AuthController::class)->group(function (Router $router) {
     $router->get('/', 'index')->middleware('verify.shopify')->name('home');
     $router->get('/{any}', 'index')->middleware('verify.shopify')->where('any', '(.+)?');
 });
+
+

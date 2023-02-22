@@ -1,9 +1,14 @@
+import { Page } from '@shopify/polaris'
 import React from 'react'
 import GlobalSkeleton from '../../GlobalPartials/GlobalSkeleton'
 
 function SkeletonPage() {
     return (
-        <GlobalSkeleton />
+        <Page
+            title='Skeleton Page'
+        >
+            <GlobalSkeleton />
+        </Page>
     )
 }
 

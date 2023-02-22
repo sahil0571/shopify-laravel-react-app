@@ -6,7 +6,7 @@ function Home() {
         <Page
             title='Home Page'
         >
-            <Text> Hello {window.shopOrigin} </Text>
+            <Text> Hello {location.hostname} </Text>
         </Page>
     )
 }
