@@ -1,66 +1,210 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Shopify App with Laravel & React
 
-## About Laravel
+This is an example template and setup guide for the Shopify application using Laravel and React.
+We are going to use [Kyon147/laravel-shopify](https://github.com/Kyon147/laravel-shopify "Kyon147/laravel-shopify") in this example
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Pacakage Refrences
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Main Utilities
 
-## Learning Laravel
+| Pacakage Name | Version      | Description                |
+| :------------ | :----------- | :------------------------- |
+| `Laravel` | `^9.19` | Backend part |
+| `PHP` | `^8.1` | 8.2 is unstable currently for this Pacakage. |
+| `React` | `^18.2.0` | Frontend part |
+| `Kyon147/laravel-shopify` | `^18.2.0` | Shopify Configuration Pacakage. |
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Other Utilities
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+| Pacakage Name | Version      | Description                |
+| :------------ | :----------- | :------------------------- |
+| `Vite` | `^4.0.0` | Bundler |
+| `@shopify/polaris` | `^10.29.0` | UI Framework |
+| `@shopify/app-bridge` | `^3.7.2` | Shopify authetication Pacakage. |
+| `@shopify/app-bridge-react` | `^3.7.2` | Shopify authetication Pacakage. |
+| `@shopify/app-bridge-utils` | `^3.5.1` | App bridge utilities. |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+## Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Install this project via git
 
-## Contributing
+```bash
+  git clone https://github.com/sp-artisan/laravel-react-app.git
+  cd laravel-react-app
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+  composer Install
+  npm Install
+  php artisan migrate
+  php artisan storage:link
+```
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    
+## Environment Variables
 
-## Security Vulnerabilities
+To run this project, you will need to add the following environment variables to your .env file
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+First copy the .env.example file into .env file. Then update required things as per your configurations and Below variables are related to shopify.
 
-## License
+If you have not cloned the repo then adding below variable in to .env file can do the work. 
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+**Requiered variables**
+
+`SHOPIFY_API_KEY`  
+`SHOPIFY_API_SECRET`  
+`SHOPIFY_API_SCOPES`  
+`VITE_SHOPIFY_API_KEY="${SHOPIFY_API_KEY}"` 
+
+**These are optional variables**
+
+`SHOPIFY_APP_NAME="${APP_NAME}"`  
+`SHOPIFY_DEBUG=true` Make it false when you are in the production. 
+`SHOPIFY_APPBRIDGE_ENABLED=true` True for embeded apps.  
+`SHOPIFY_API_VERSION` Respected shopify API version which you are using. 
+
+
+**Billing Variables**
+
+`SHOPIFY_BILLING_ENABLED` true or false  
+`SHOPIFY_BILLING_FREEMIUM_ENABLED` true or false  
+
+
+## Steps For manual setup.
+
+### 1. Setup Shopify Composer pacakage.
+
+`composer require kyon147/laravel-shopify `  
+
+#### Providers & FacadesProviders & Facades
+###### With Laravel's auto-discover feature, this is handled for you on installWith Laravel's auto-discover feature, this is handled for you on install.
+
+`php artisan vendor:publish --tag=shopify-config `  
+
+#### Change user model with below code.
+
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Osiset\ShopifyApp\Contracts\ShopModel as IShopModel;
+use Osiset\ShopifyApp\Traits\ShopModel;
+
+class User extends Authenticatable implements IShopModel
+{
+    use Notifiable;
+    use ShopModel;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+}
+
+```
+
+#### Create tables of the App.
+
+``` php 
+php artisan migrate
+```
+
+#### In the web.php add this snippet.
+
+```php
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+
+// Please keep this route snippet last
+Route::controller(AuthController::class)->group(function (Router $router) {
+    $router->get('/', 'index')->middleware('verify.shopify')->name('home');
+    $router->get('/{any}', 'index')->middleware('verify.shopify')->where('any', '(.+)?');
+});
+```
+
+#### NOTE: Please make sure to make your view files as they are in the repo. (You can edit them but they must be present in their respective folders)
+
+#### CSRF
+You must disable CSRF as there is currently no solution for verifying session tokens with CSRF, there is a conflict due to new login creation each request.
+
+Open \App\Http\Middleware\VerifyCsrfToken.php, and add or edit:
+
+```php
+protected $except = [
+    '*',
+];
+```
+
+#### Axios interceptor
+
+If we have to send autheticated requests to the shopify then we must have session token which refreshes every 2 seconds.
+So we are making an instance of axios here which will have latest session token everytime we hit request.
+We must use this instance instead of axios.
+
+Refer this shopify doc for more info.
+
+```javascript
+import axios from "axios";
+import { getSessionToken } from "@shopify/app-bridge-utils";
+import { createApp } from "@shopify/app-bridge";
+
+const instance = axios.create();
+
+const shopifConfig = {
+    apiKey: __SHOPIFY_API_KEY,
+    host: new URLSearchParams(location.search).get('host'),
+    forceRedirect: true
+}
+
+const app = createApp(shopifConfig);
+
+instance.interceptors.request.use(function (config) {
+    return getSessionToken(app) // requires a Shopify App Bridge instance
+        .then((token) => {
+            // Append your request headers with an authenticated token
+            config.headers.Authorization = `Bearer ${token}`
+            return config
+        })
+})
+
+// Export your Axios instance to use within your app
+export default instance;
+
+``` 
+
+
+

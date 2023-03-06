@@ -1,17 +1,25 @@
 import axios from "axios";
 import { getSessionToken } from "@shopify/app-bridge-utils";
+import { createApp } from "@shopify/app-bridge";
 
 const instance = axios.create();
-// Here window.shopify_app_bridge is App.
 
-instance.interceptors.request.use(async function (config) {
-    return await getSessionToken(window.shopify_app_bridge)
+const shopifConfig = {
+    apiKey: __SHOPIFY_API_KEY,
+    host: new URLSearchParams(location.search).get('host'),
+    forceRedirect: true
+}
+
+const app = createApp(shopifConfig);
+
+instance.interceptors.request.use(function (config) {
+    return getSessionToken(app) // requires a Shopify App Bridge instance
         .then((token) => {
-            // console.log('BEAREE :: ', token);
-            config.headers["Authorization"] = `Bearer ${token}`;
-            return config;
-        });
-});
+            // Append your request headers with an authenticated token
+            config.headers.Authorization = `Bearer ${token}`
+            return config
+        })
+})
 
 // Export your Axios instance to use within your app
 export default instance;
