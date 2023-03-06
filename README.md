@@ -205,6 +205,26 @@ instance.interceptors.request.use(function (config) {
 export default instance;
 
 ``` 
+### Example Uninstall Job
+Example for the webhooks is added and we have added app uninstall job as an example.
+
+First of all run this command in the terminal.
+
+`php artisan vendor:publish --tag=shopify-jobs`
+
+It will create a new Job file in the `App/Jobs/AppUninstalledJob`
+Next, edit config/shopify-app.php to enable the job:
+
+```php
+    'webhooks' => [
+        [
+            'topic' => env('APP_UNINSTALLED_TOPIC', 'app/uninstalled'),
+            'address' =>  env('APP_URL') . '/webhook/app-uninstalled'
+        ],
+    ],
+```
+You can also copy the Uninstall job from the template as well which is having some things already done.
+
 
 
 
