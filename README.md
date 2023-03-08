@@ -41,10 +41,20 @@ Install this project via git
 ```bash
   composer Install
   npm Install
+  php artisan key:generate
   php artisan migrate
   php artisan storage:link
 ```
 
+### Development
+Run below command to start development locally.
+```bash
+  npm run dev
+```
+Run below command to compile assets for the production.
+```bash
+  npm run build
+```
 
     
 ## Environment Variables
@@ -79,16 +89,16 @@ If you have not cloned the repo then adding below variable in to .env file can d
 
 ## Steps For manual setup.
 
-### 1. Setup Shopify Composer pacakage.
+### 1. Install Composer pacakage.
 
 `composer require kyon147/laravel-shopify `  
 
 #### Providers & FacadesProviders & Facades
-###### With Laravel's auto-discover feature, this is handled for you on installWith Laravel's auto-discover feature, this is handled for you on install.
+###### With Laravel's auto-discover feature, this is handled for you on install.
 
 `php artisan vendor:publish --tag=shopify-config `  
 
-#### Change user model with below code.
+### 2. Change user model with below code.
 
 ```php
 <?php
@@ -138,13 +148,13 @@ class User extends Authenticatable implements IShopModel
 
 ```
 
-#### Create tables of the App.
+### 3. Migrate tables of the App.
 
 ``` php 
 php artisan migrate
 ```
 
-#### In the web.php add this snippet.
+### 4. Setup routes in the web.php.
 
 ```php
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -158,7 +168,7 @@ Route::controller(AuthController::class)->group(function (Router $router) {
 
 #### NOTE: Please make sure to make your view files as they are in the repo. (You can edit them but they must be present in their respective folders)
 
-#### CSRF
+### 5. CSRF middleware disable.
 You must disable CSRF as there is currently no solution for verifying session tokens with CSRF, there is a conflict due to new login creation each request.
 
 Open \App\Http\Middleware\VerifyCsrfToken.php, and add or edit:
@@ -169,11 +179,13 @@ protected $except = [
 ];
 ```
 
+After these steps, You will be able to scaffold basic shopify app. Follow below instructions for more things.
+
 #### Axios interceptor
 
-If we have to send autheticated requests to the shopify then we must have session token which refreshes every 2 seconds.
+If we want to send autheticated requests to the shopify then we must have session token as a Bearer token in every request which refreshes every 2 seconds.
 So we are making an instance of axios here which will have latest session token everytime we hit request.
-We must use this instance instead of axios.
+We must use this instance instead of axios. ( We are modifying axios for session tokens )
 
 Refer this shopify doc for more info.
 
