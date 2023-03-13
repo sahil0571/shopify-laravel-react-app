@@ -11,10 +11,10 @@ We are going to use [Kyon147/laravel-shopify](https://github.com/Kyon147/laravel
 
 | Pacakage Name | Version      | Description                |
 | :------------ | :----------- | :------------------------- |
-| `Laravel` | `^9.19` | Backend part |
+| `Laravel` | `^10.3` | Backend part |
 | `PHP` | `^8.1` | 8.2 is unstable currently for this Pacakage. |
 | `React` | `^18.2.0` | Frontend part |
-| `Kyon147/laravel-shopify` | `^18.2.0` | Shopify Configuration Pacakage. |
+| `Kyon147/laravel-shopify` | `^18.0.0` | Shopify Configuration Pacakage. |
 
 #### Other Utilities
 
