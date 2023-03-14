@@ -26,5 +26,4 @@ We are going to use [Kyon147/laravel-shopify](https://github.com/Kyon147/laravel
 | `@shopify/app-bridge-react` | `^3.7.2` | Shopify authetication Pacakage. |
 | `@shopify/app-bridge-utils` | `^3.5.1` | App bridge utilities. |
 
-
 Please follow this wiki for more. [Wiki Link](https://github.com/sp-artisan/shopify-laravel-react-app/wiki)
