@@ -1,0 +1,30 @@
+.current-cls{
+    background-color:rgb(147 141 141 / 96%);
+    color: #FFF;
+}
+
+.buynow-cls{
+    background-color:#013220;
+    color: #FFF;
+}
+
+.current-cls:hover{
+    background-color:rgb(147 141 141 / 96%);
+    cursor: alias;
+}
+
+.buynow-cls:hover{
+    background-color: #1a7051;
+}
+
+h1.card-heading {
+    float: right;
+    font-size: large;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.card-heading span {
+    font-size: 25px;
+    padding: 0 2px;
+}

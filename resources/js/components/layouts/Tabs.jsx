@@ -16,6 +16,10 @@ function Tabs() {
                         label: 'Skeleton Page',
                         destination: '/skeleton-page',
                     },
+                    {
+                        label: 'Billing',
+                        destination: '/plan-page',
+                    },
                 ]}
             />
         </>
