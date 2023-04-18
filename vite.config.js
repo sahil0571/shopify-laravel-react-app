@@ -8,7 +8,8 @@ export default defineConfig(({ command, mode }) => {
     return {
         // Defining Shopify API key to use it in the app.js
         define: {
-            __SHOPIFY_API_KEY: JSON.stringify(env.VITE_SHOPIFY_API_KEY)
+            __SHOPIFY_API_KEY: JSON.stringify(env.VITE_SHOPIFY_API_KEY),
+            _APP_URL:JSON.stringify(env.VITE_APP_URL)
         },
         plugins: [
             laravel({

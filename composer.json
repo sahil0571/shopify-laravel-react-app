@@ -7,8 +7,8 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
-        "kyon147/laravel-shopify": "^18.0",
-        "laravel/framework": "^10.3",
+        "kyon147/laravel-shopify": "^18.0.1",
+        "laravel/framework": "^10.5",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7"
     },
