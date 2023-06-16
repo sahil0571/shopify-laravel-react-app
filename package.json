@@ -6,18 +6,16 @@
     },
     "devDependencies": {
         "axios": "^1.1.2",
-        "laravel-vite-plugin": "^0.7.4",
+        "laravel-vite-plugin": "^0.7.8",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
-        "vite": "^4.0.0"
+        "vite": "^4.3.2"
     },
     "dependencies": {
-        "@shopify/app-bridge": "^3.7.2",
-        "@shopify/app-bridge-react": "^3.7.2",
-        "@shopify/app-bridge-utils": "^3.5.1",
-        "@shopify/polaris": "^10.29.0",
-        "@vitejs/plugin-basic-ssl": "^1.0.1",
-        "@vitejs/plugin-react": "^3.1.0",
+        "@shopify/app-bridge": "^3.7.7",
+        "@shopify/app-bridge-react": "^3.7.7",
+        "@shopify/polaris": "^11.1.3",
+        "@vitejs/plugin-react": "^4.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.8.1",

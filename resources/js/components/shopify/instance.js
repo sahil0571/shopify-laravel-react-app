@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getSessionToken } from "@shopify/app-bridge-utils";
+import { getSessionToken } from "@shopify/app-bridge/utilities";
 import { createApp } from "@shopify/app-bridge";
 
 const instance = axios.create();
