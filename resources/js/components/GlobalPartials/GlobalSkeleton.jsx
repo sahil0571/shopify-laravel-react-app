@@ -1,62 +1,62 @@
 import React from 'react'
+
 import {
     SkeletonPage,
     Layout,
     Card,
     SkeletonBodyText,
-    TextContainer,
+    VerticalStack,
     SkeletonDisplayText,
 } from '@shopify/polaris';
-
 
 function GlobalSkeleton() {
     return (
         <SkeletonPage primaryAction>
             <Layout>
                 <Layout.Section>
-                    <Card sectioned>
+                    <Card>
                         <SkeletonBodyText />
                     </Card>
-                    <Card sectioned>
-                        <TextContainer>
+                    <Card>
+                        <VerticalStack>
                             <SkeletonDisplayText size="small" />
                             <SkeletonBodyText />
-                        </TextContainer>
+                        </VerticalStack>
                     </Card>
-                    <Card sectioned>
-                        <TextContainer>
+                    <Card>
+                        <VerticalStack>
                             <SkeletonDisplayText size="small" />
                             <SkeletonBodyText />
-                        </TextContainer>
+                        </VerticalStack>
                     </Card>
                 </Layout.Section>
                 <Layout.Section secondary>
                     <Card>
-                        <Card.Section>
-                            <TextContainer>
+                        <Card>
+                            <VerticalStack>
                                 <SkeletonDisplayText size="small" />
                                 <SkeletonBodyText lines={2} />
-                            </TextContainer>
-                        </Card.Section>
-                        <Card.Section>
+                            </VerticalStack>
+                        </Card>
+                        <Card>
                             <SkeletonBodyText lines={1} />
-                        </Card.Section>
+                        </Card>
                     </Card>
                     <Card subdued>
-                        <Card.Section>
-                            <TextContainer>
+                        <Card>
+                            <VerticalStack>
                                 <SkeletonDisplayText size="small" />
                                 <SkeletonBodyText lines={2} />
-                            </TextContainer>
-                        </Card.Section>
-                        <Card.Section>
+                            </VerticalStack>
+                        </Card>
+                        <Card>
                             <SkeletonBodyText lines={2} />
-                        </Card.Section>
+                        </Card>
                     </Card>
                 </Layout.Section>
             </Layout>
         </SkeletonPage>
-    );
+    )
 }
 
 export default GlobalSkeleton

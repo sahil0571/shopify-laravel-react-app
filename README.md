@@ -22,8 +22,12 @@ We are going to use [Kyon147/laravel-shopify](https://github.com/Kyon147/laravel
 | :------------ | :----------- | :------------------------- |
 | `Vite` | `^4.0.0` | Bundler |
 | `@shopify/polaris` | `^10.29.0` | UI Framework |
-| `@shopify/app-bridge` | `^3.7.2` | Shopify authetication Pacakage. |
-| `@shopify/app-bridge-react` | `^3.7.2` | Shopify authetication Pacakage. |
-| `@shopify/app-bridge-utils` | `^3.5.1` | App bridge utilities. |
+| `@shopify/app-bridge` | `^3.7.7` | Shopify authetication Pacakage. |
+| `@shopify/app-bridge-react` | `^3.7.7` | Shopify authetication Pacakage. |
+
+Note : @shopify/app-bridge-utils is not deprecated you can use this from @shopify/app-bridge/utilities.
+
+Make sure you change getSessionToken import in the instance.js file.
+`import { getSessionToken } from "@shopify/app-bridge/utilities";`
 
 Please follow this wiki for more. [Wiki Link](https://github.com/sp-artisan/shopify-laravel-react-app/wiki)
